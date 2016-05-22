@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daddato.LojaVirtual.Web", "Daddato.Lojavirtual.Web\Daddato.LojaVirtual.Web.csproj", "{3A74AE8F-5A8A-40C5-A365-A26F3278F12C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daddato.LojaVirtual.Test", "Daddato.LojaVirtual.Test\Daddato.LojaVirtual.Test.csproj", "{E2BB6A77-4461-4614-8070-CDED76437EFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A74AE8F-5A8A-40C5-A365-A26F3278F12C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A74AE8F-5A8A-40C5-A365-A26F3278F12C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A74AE8F-5A8A-40C5-A365-A26F3278F12C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A74AE8F-5A8A-40C5-A365-A26F3278F12C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2BB6A77-4461-4614-8070-CDED76437EFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2BB6A77-4461-4614-8070-CDED76437EFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2BB6A77-4461-4614-8070-CDED76437EFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2BB6A77-4461-4614-8070-CDED76437EFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
