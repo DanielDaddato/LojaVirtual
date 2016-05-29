@@ -14,6 +14,45 @@ namespace Daddato.Lojavirtual.Web
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+               name: null,
+               url: "",
+               defaults: new { controller = "Vitrine", action = "ListaProdutos",
+                   categoria = (string)null,
+                   pagina = 1 });
+
+            routes.MapRoute(
+               name: null,
+               url: "Pagina{pagina}",
+               defaults: new
+               {
+                   controller = "Vitrine",
+                   action = "ListaProdutos",
+                   categoria = (string)null,
+                   pagina = @"\d+"
+               });
+
+            routes.MapRoute(
+               name: null,
+               url: "{categoria}",
+               defaults: new
+               {
+                   controller = "Vitrine",
+                   action = "ListaProdutos",
+                   categoria = (string)null,
+                   pagina = 1
+               });
+            routes.MapRoute(
+               name: null,
+               url: "{categoria}/Pagina{pagina}",
+               defaults: new
+               {
+                   controller = "Vitrine",
+                   action = "ListaProdutos",
+                   categoria = (string)null,
+                   pagina = @"\d+"
+               });
+
+            routes.MapRoute(
                 name: null,
                 url: "Pagina{pagina}",
                 defaults: new {controller = "Vitrine", action = "ListaProdutos"});

@@ -16,7 +16,9 @@
     <a class="navbar-brand" href="#">Modelo Loja Virtual</a>
     </div>
     <div class="row panel">
-        <div id="categorias" class="col-xs-3"></div>
+        <div id="categorias" class="col-xs-3">
+            @Html.Action("Menu", "Categorias");
+        </div>
     <div class="col-xs-8">
         @RenderBody()
     </div>

@@ -21,22 +21,24 @@ namespace Daddato.Lojavirtual.Web.Controllers
             return View(produtos);
         }
 
-        public ViewResult ListaProdutos(int pagina = 1)
+        public ViewResult ListaProdutos(string categoria, int pagina = 1)
         {
             var _repositorio = new ProdutosRepositorio();
-          
+
 
             var produtos = new ProdutosViewModel
             {
                 Produtos = _repositorio.Produtos
+                .Where(p => categoria == null || p.Categoria == categoria)
                 .Skip((pagina - 1) * produtosPorPagina)
                 .Take(produtosPorPagina),
                 Paginacao = new Paginacao
                 {
                     ItensPorPagina = 10,
                     PaginaAtual = pagina,
-                    ItensTotal = _repositorio.Produtos.Count()
-                }
+                    ItensTotal = categoria == null ? _repositorio.Produtos.Count() : _repositorio.Produtos.Where(x => x.Categoria == categoria).Count()
+                },
+                CategoriaAtual = categoria
             };
             return View(produtos);
         }
