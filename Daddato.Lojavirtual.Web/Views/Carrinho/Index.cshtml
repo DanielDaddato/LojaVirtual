@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Loja Virtual Teste";
+}
+@model Daddato.Lojavirtual.Web.Models.CarrinhoViewModel
+<style>
+    #carrinho {
+        vertical-align: middle;
+    }
+</style>
+<h3>Seu Carrinho</h3>
+
+<table id="carrinho" class="table">
+    <thead>
+        <tr>Quantidade</tr>
+        <tr>Produto</tr>
+        <tr class="text-right">Preço</tr>
+        <tr class="text-right">SubTotal</tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Carrinho.ItemCarrinho)
+        {
+            <tr>
+                <td class="text-center">@item.Quantidade</td>
+                <td class="text-left">@item.Produto.Nome</td>
+            <td class="text-right">@item.Produto.Preco.ToString("c")</td>
+            <td class="text-right">@((item.Quantidade * item.Produto.Preco).ToString("c"))</td>
+            <td>
+                @using (Html.BeginForm("Remover", "Carrinho"))
+                {
+                    @Html.Hidden("produtoId", item.Produto.ProdutoId)
+                    @Html.HiddenFor(x => x.ReturnUrl)
+                    <input type="submit" class="btn btn-sm btn-warning" value="Remover" />
+                }
+            </td>
+        </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3" class="text-right">Total: </td>
+            <td class="text-right">@Model.Carrinho.ValorTotal().ToString("c")</td>
+        </tr>
+    </tfoot>
+</table>
+<div class="text-center">
+    <a class="btn btn-primary" href="@Model.ReturnUrl">Continuar Comprando</a>
+    @Html.ActionLink("Fechar Pedido", "FecharPedido", "Carrinho", new { @Class = "btn btn-primary" })
+</div>

@@ -30,9 +30,9 @@ namespace Daddato.Lojavirtual.Web.Entidades
             _itensCarrinho.RemoveAll(i => i.Produto.ProdutoId == produto.ProdutoId);
         }
 
-        public void ValorTotal()
+        public decimal ValorTotal()
         {
-            _itensCarrinho.Sum(i => i.Produto.Preco * i.Quantidade);
+            return _itensCarrinho.Sum(i => i.Produto.Preco * i.Quantidade);
         }
 
         public void LimparCarrinho()
